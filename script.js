@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadMovies() {
     try {
-        const response = await fetch('http://localhost:5000/api/movies');
+        const response = await fetch('https://servermovie-j6nj.onrender.com/api/movies');
         const movies = await response.json();
         displayMovies(movies);
         populateMovieSelect(movies);
@@ -40,7 +40,7 @@ function setupBookingForm() {
         const seats = document.getElementById('seats').value;
         
         try {
-            const response = await fetch('http://localhost:5000/api/bookings', {
+            const response = await fetch('https://servermovie-j6nj.onrender.com/api/bookings', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
